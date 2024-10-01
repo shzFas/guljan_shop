@@ -1,0 +1,6 @@
+mail vegejo7029@amxyy.com
+password qwerty321Aa
+
+admin
+p9eYNTiJfyCldY9Q
+mongodb+srv://admin:p9eYNTiJfyCldY9Q@shop.clpjt.mongodb.net/shop/
