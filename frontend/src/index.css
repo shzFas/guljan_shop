@@ -124,3 +124,12 @@ a.header-link:hover,
 button.side-navbar-user:hover {
   color: white;
 }
+
+.slider__main {
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+.products__main {
+  margin-bottom: 40px;
+}

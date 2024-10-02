@@ -21,7 +21,7 @@ export default function HomePage() {
       </Helmet>
       <CarouselMain/>
       {products!.map((product) => (
-        <Col key={product.slug} sm={6} md={4} lg={3}>
+        <Col className="products__main" key={product.slug} sm={6} md={4} lg={3}>
           <ProductItem product={product} />
         </Col>
       ))}
