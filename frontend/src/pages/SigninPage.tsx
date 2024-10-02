@@ -47,9 +47,9 @@ export default function SigninPage() {
   return (
     <Container className="small-container">
       <Helmet>
-        <title>Sign In</title>
+        <title>Авторизация</title>
       </Helmet>
-      <h1 className="my-3">Sign In</h1>
+      <h1 className="my-3">Вход в аккаунт</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group className="mb-3" controlId="email">
           <Form.Label>Email</Form.Label>
@@ -60,7 +60,7 @@ export default function SigninPage() {
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="password">
-          <Form.Label>Password</Form.Label>
+          <Form.Label>Пароль</Form.Label>
           <Form.Control
             type="password"
             required
@@ -69,13 +69,13 @@ export default function SigninPage() {
         </Form.Group>
         <div className="mb-3">
           <Button disabled={isLoading} type="submit">
-            Sign In
+            Вход
           </Button>
           {isLoading && <LoadingBox />}
         </div>
         <div className="mb-3">
-          New customer?{' '}
-          <Link to={`/signup?redirect=${redirect}`}>Create your account</Link>
+          Новый покупатель ?{' '}
+          <Link to={`/signup?redirect=${redirect}`}>Создайте аккаунт</Link>
         </div>
       </Form>
     </Container>

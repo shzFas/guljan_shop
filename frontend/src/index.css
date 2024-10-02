@@ -7,6 +7,10 @@
   -webkit-text-size-adjust: 100%;
 }
 
+.header__main {
+  background-color: #387a0c;
+}
+
 .product-image {
   max-width: 400px;
   width: 100%;
@@ -55,7 +59,6 @@ img.thumbnail {
 
 a.header-link,
 .header-link > a {
-  border: 1px rgb(33, 37, 41) solid;
   border-radius: 2px;
   color: white !important;
   font-weight: bold;
@@ -64,7 +67,6 @@ a.header-link,
 a.header-link:hover,
 .header-link > a:hover {
   color: white;
-  border: 1px white solid;
 }
 
 .header .dropdown-menu,

@@ -6,6 +6,7 @@ import ProductItem from '../components/ProductItem'
 import { useGetProductsQuery } from '../hooks/productHooks'
 import { ApiError } from '../types/ApiError'
 import { getError } from '../utils'
+import CarouselMain from '../components/CarouselMain'
 
 export default function HomePage() {
   const { data: products, isLoading, error } = useGetProductsQuery()
@@ -16,8 +17,9 @@ export default function HomePage() {
   ) : (
     <Row>
       <Helmet>
-        <title>TS Amazona</title>
+        <title>Guljan</title>
       </Helmet>
+      <CarouselMain/>
       {products!.map((product) => (
         <Col key={product.slug} sm={6} md={4} lg={3}>
           <ProductItem product={product} />

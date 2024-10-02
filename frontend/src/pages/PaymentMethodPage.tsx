@@ -32,9 +32,9 @@ export default function PaymentMethodPage() {
       <CheckoutSteps step1 step2 step3></CheckoutSteps>
       <div className="container small-container">
         <Helmet>
-          <title>Payment Method</title>
+          <title>Метод оплаты</title>
         </Helmet>
-        <h1 className="my-3">Payment Method</h1>
+        <h1 className="my-3">Метод оплаты</h1>
         <Form onSubmit={submitHandler}>
           <div className="mb-3">
             <Form.Check
@@ -57,7 +57,7 @@ export default function PaymentMethodPage() {
             />
           </div>
           <div className="mb-3">
-            <Button type="submit">Continue</Button>
+            <Button type="submit">Продолжить</Button>
           </div>
         </Form>
       </div>

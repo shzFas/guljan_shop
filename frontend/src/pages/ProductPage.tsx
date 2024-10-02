@@ -44,7 +44,7 @@ export default function ProductPage() {
   ) : error ? (
     <MessageBox variant="danger">{getError(error as ApiError)}</MessageBox>
   ) : !product ? (
-    <MessageBox variant="danger">Product Not Found</MessageBox>
+    <MessageBox variant="danger">Товар не найден</MessageBox>
   ) : (
     <div>
       <Row>
@@ -65,9 +65,9 @@ export default function ProductPage() {
                 numReviews={product.numReviews}
               ></Rating>
             </ListGroup.Item>
-            <ListGroup.Item>Price : ${product.price}</ListGroup.Item>
+            <ListGroup.Item>Цена : ${product.price}</ListGroup.Item>
             <ListGroup.Item>
-              Description:
+              Описание:
               <p>{product.description}</p>
             </ListGroup.Item>
           </ListGroup>
@@ -78,18 +78,18 @@ export default function ProductPage() {
               <ListGroup variant="flush">
                 <ListGroup.Item>
                   <Row>
-                    <Col>Price:</Col>
+                    <Col>Цена:</Col>
                     <Col>${product.price}</Col>
                   </Row>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Row>
-                    <Col>Status:</Col>
+                    <Col>Наличие:</Col>
                     <Col>
                       {product.countInStock > 0 ? (
-                        <Badge bg="success">In Stock</Badge>
+                        <Badge bg="success">Есть на складе</Badge>
                       ) : (
-                        <Badge bg="danger">Unavailable</Badge>
+                        <Badge bg="danger">Нет на складе</Badge>
                       )}
                     </Col>
                   </Row>
@@ -98,7 +98,7 @@ export default function ProductPage() {
                   <ListGroup.Item>
                     <div className="d-grid">
                       <Button onClick={addToCartHandler} variant="primary">
-                        Add to Cart
+                        Добавить в корзину
                       </Button>
                     </div>
                   </ListGroup.Item>

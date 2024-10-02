@@ -41,12 +41,12 @@ export default function ProfilePage() {
   return (
     <div className="container small-container">
       <Helmet>
-        <title>User Profile</title>
+        <title>Профиль пользователя</title>
       </Helmet>
-      <h1 className="my-3">User Profile</h1>
+      <h1 className="my-3">Профиль</h1>
       <form onSubmit={submitHandler}>
         <Form.Group className="mb-3" controlId="name">
-          <Form.Label>Name</Form.Label>
+          <Form.Label>Имя</Form.Label>
           <Form.Control
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -63,14 +63,14 @@ export default function ProfilePage() {
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="password">
-          <Form.Label>Password</Form.Label>
+          <Form.Label>Пароль</Form.Label>
           <Form.Control
             type="password"
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="password">
-          <Form.Label>Confirm Password</Form.Label>
+          <Form.Label>Подтвердите пароль</Form.Label>
           <Form.Control
             type="password"
             onChange={(e) => setConfirmPassword(e.target.value)}
@@ -78,7 +78,7 @@ export default function ProfilePage() {
         </Form.Group>
         <div className="mb-3">
           <Button disabled={isLoading} type="submit">
-            Update
+            Обновить данные
           </Button>
           {isLoading && <LoadingBox></LoadingBox>}
         </div>
