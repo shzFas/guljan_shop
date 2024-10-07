@@ -133,3 +133,30 @@ button.side-navbar-user:hover {
 .products__main {
   margin-bottom: 40px;
 }
+
+.dropdown__button {
+  background-color: #387a0c !important;
+  color: #fff;
+  border: none;
+}
+
+.dropdown__button-child {
+  background-color: transparent !important;
+  color: #000 !important;
+  border: none;
+  width: 100%;
+  text-align: left;
+}
+
+.dropdown__button-child__link {
+  text-decoration: none;
+  color: #000;
+}
+
+.dropdown__button::after {
+  display: none !important;
+}
+
+.dropdown__button-child::after {
+  display: none !important;
+}
