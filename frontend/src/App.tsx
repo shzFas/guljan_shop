@@ -167,10 +167,10 @@ function App() {
                   <>
                     <Dropdown drop="end">
                       <Dropdown.Toggle className="dropdown__button-child" id="dropdown-basic">
-                        <Link className="dropdown__button-child__link" to={{ pathname: '/search', search: `category=${category}` }}>{category}</Link>
+                        <Link className="dropdown__button-child__link" to={{ pathname: '/category', search: `category=${category}` }}>{category}</Link>
                       </Dropdown.Toggle>
 
-                      <Dropdown.Menu align="end">
+                      {/* <Dropdown.Menu align="end">
                         <Dropdown.Item href="#/action-1">
                           Action
                         </Dropdown.Item>
@@ -178,7 +178,7 @@ function App() {
                         <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
                         <Dropdown.Divider />
                         <Dropdown.Item href="#/action-4">Separated link</Dropdown.Item>
-                      </Dropdown.Menu>
+                      </Dropdown.Menu> */}
                     </Dropdown>
                   </>
                 )))}

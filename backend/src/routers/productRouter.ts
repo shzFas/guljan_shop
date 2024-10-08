@@ -34,7 +34,7 @@ productRouter.get(
 )
 
 productRouter.get(
-  '/search',
+  '/category',
   asyncHandler(async (req: Request, res: Response) => {
     const category = req.query.category as string | undefined;
     const filter = category ? { category } : {};

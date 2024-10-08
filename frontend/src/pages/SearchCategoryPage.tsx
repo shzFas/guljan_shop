@@ -8,7 +8,7 @@ import { ApiError } from '../types/ApiError'
 import { getError } from '../utils'
 import { useLocation } from 'react-router-dom'
 
-export default function SearchPage() {
+export default function SearchCategoryPage() {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const category = queryParams.get('category');
