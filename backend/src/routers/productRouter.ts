@@ -32,3 +32,16 @@ productRouter.get(
     }
   })
 )
+
+productRouter.get(
+  '/search',
+  asyncHandler(async (req: Request, res: Response) => {
+    const category = req.query.category as string | undefined;
+    const filter = category ? { category } : {};
+    const products = await ProductModel.find(filter);
+    if (products.length === 0) {
+      return res.status(404).json({ message: 'No products found for this category.' });
+    }
+    res.json(products);
+  })
+);
