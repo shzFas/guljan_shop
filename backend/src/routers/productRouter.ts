@@ -45,3 +45,22 @@ productRouter.get(
     res.json(products);
   })
 );
+
+productRouter.get(
+  '/search',
+  asyncHandler(async (req: Request, res: Response) => {
+    const query = req.query.query as string | undefined;
+
+    // Если параметр имени передан, ищем продукты по частичному совпадению с именем
+    const filter = query ? { name: { $regex: query, $options: 'i' } } : {};
+
+    const products = await ProductModel.find(filter);
+
+    // Если продуктов не найдено, возвращаем пустой массив
+    if (products.length === 0) {
+      return res.status(404).json({ message: 'No products found.' });
+    }
+
+    res.json(products); // Возвращаем найденные продукты
+  })
+);
