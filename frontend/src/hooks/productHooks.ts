@@ -30,4 +30,13 @@ export const useGetCategoriesQuery = () =>
         return data;
       },
     });
+
+    export const useGetProductNameQuery = (name: string | null) =>
+      useQuery({
+        queryKey: ['name', name],
+        queryFn: async () => {
+          const { data } = await apiClient.get<Product[]>(`/api/products/search?query=${name}`);
+          return data;
+        },
+      });
   
