@@ -73,7 +73,7 @@ function App() {
                 <i className="fas fa-bars"></i>
               </Link> */}
             </div>
-            <SearchBox />
+            {/* <SearchBox /> */}
 
             <Navbar.Collapse>
               <Nav className="w-100 justify-content-end">
