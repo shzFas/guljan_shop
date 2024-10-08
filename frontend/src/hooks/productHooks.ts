@@ -21,3 +21,13 @@ export const useGetCategoriesQuery = () =>
     queryFn: async () =>
       (await apiClient.get<[]>(`/api/products/categories`)).data,
   })
+
+  export const useGetProductCategoryQuery = (category: string | null) =>
+    useQuery({
+      queryKey: ['products', category],
+      queryFn: async () => {
+        const { data } = await apiClient.get<Product[]>(`/api/products/search?category=${category}`);
+        return data;
+      },
+    });
+  

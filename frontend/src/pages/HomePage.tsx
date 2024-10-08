@@ -19,7 +19,7 @@ export default function HomePage() {
       <Helmet>
         <title>Guljan</title>
       </Helmet>
-      <CarouselMain/>
+      {/* <CarouselMain/> */}
       {products!.map((product) => (
         <Col className="products__main" key={product.slug} sm={6} md={4} lg={3}>
           <ProductItem product={product} />

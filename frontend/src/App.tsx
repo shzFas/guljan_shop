@@ -10,6 +10,8 @@ import {
   Nav,
   Navbar,
   NavDropdown,
+  Dropdown,
+  DropdownButton
 } from 'react-bootstrap'
 import { Link, Outlet } from 'react-router-dom'
 import { LinkContainer } from 'react-router-bootstrap'
@@ -63,15 +65,15 @@ function App() {
               <Navbar.Brand>Guljan</Navbar.Brand>
             </LinkContainer>
             <div className="d-flex">
-            <Link
+              {/*             <Link
                 to="#"
                 className="nav-link header-link p-1"
                 onClick={() => setSidebarIsOpen(!sidebarIsOpen)}
               >
                 <i className="fas fa-bars"></i>
-              </Link>
+              </Link> */}
             </div>
-            <SearchBox />
+            {/* <SearchBox /> */}
 
             <Navbar.Collapse>
               <Nav className="w-100 justify-content-end">
@@ -114,9 +116,9 @@ function App() {
                     </LinkContainer>
                   </NavDropdown>
                 )}
-                <Link to="/orderhistory" className="nav-link header-link">
+                {/*                 <Link to="/orderhistory" className="nav-link header-link">
                   Заказы
-                </Link>
+                </Link> */}
                 <Link to="/cart" className="nav-link header-link p-0">
                   {
                     <span className="cart-badge">
@@ -152,15 +154,46 @@ function App() {
           </div>
         </Navbar>
       </header>
+      <div>
+        <Container>
+          <Dropdown>
+            <Dropdown.Toggle className="dropdown__button" id="dropdown-basic">
+              Каталог
+            </Dropdown.Toggle>
 
-      {sidebarIsOpen && (
+            <Dropdown.Menu>
+              {isLoading ? (<LoadingBox />) : (
+                categories!.map((category) => (
+                  <>
+                    <Dropdown drop="end">
+                      <Dropdown.Toggle className="dropdown__button-child" id="dropdown-basic">
+                        <Link className="dropdown__button-child__link" to={{ pathname: '/search', search: `category=${category}` }}>{category}</Link>
+                      </Dropdown.Toggle>
+
+                      <Dropdown.Menu align="end">
+                        <Dropdown.Item href="#/action-1">
+                          Action
+                        </Dropdown.Item>
+                        <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                        <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                        <Dropdown.Divider />
+                        <Dropdown.Item href="#/action-4">Separated link</Dropdown.Item>
+                      </Dropdown.Menu>
+                    </Dropdown>
+                  </>
+                )))}
+            </Dropdown.Menu>
+          </Dropdown>
+        </Container>
+      </div>
+      {/*       {sidebarIsOpen && (
         <div
           onClick={() => setSidebarIsOpen(!sidebarIsOpen)}
           className="side-navbar-backdrop"
         ></div>
-      )}
-
-      <div
+      )} */}
+      {/* Sidebar пока что без него */}
+      {/*       <div
         className={
           sidebarIsOpen
             ? 'active-nav side-navbar d-flex justify-content-between flex-wrap flex-column'
@@ -208,14 +241,14 @@ function App() {
             ))
           )}
         </ListGroup>
-      </div>
+      </div> */}
 
       <main>
         <Container className="mt-3">
           <Outlet />
         </Container>
       </main>
-{/*       <footer>
+      {/*       <footer>
         <div className="text-center">All rights reserved</div>
       </footer> */}
     </div>
