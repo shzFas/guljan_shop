@@ -160,3 +160,9 @@ button.side-navbar-user:hover {
 .dropdown__button-child::after {
   display: none !important;
 }
+
+.product__button-cart{ 
+  background-color: #387a0c !important;
+  color: #fff;
+  border: none;
+}
